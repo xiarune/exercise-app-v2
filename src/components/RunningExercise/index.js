@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const RunningExercise = ({ name, suggested, goHome, goToExercise }) => {
+const RunningExercise = ({ suggested, goHome, goToExercise }) => {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [laps, setLaps] = useState([]);
@@ -38,8 +38,7 @@ const RunningExercise = ({ name, suggested, goHome, goToExercise }) => {
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
-      <h2>{name}</h2>
+    <div>
       <p>Time: {formatTime(time)}</p>
       <button onClick={handleStartPause}>{isRunning ? "Pause" : "Start"}</button>
       <button onClick={recordLap} disabled={!isRunning}>Record Lap</button>
@@ -56,12 +55,10 @@ const RunningExercise = ({ name, suggested, goHome, goToExercise }) => {
         <button onClick={() => goToExercise(suggested)}>
           Do Suggested: {suggested.name}
         </button>
-        <button onClick={goHome} style={{ marginLeft: "10px" }}>
-          Home
-        </button>
       </div>
     </div>
   );
 };
 
 export default RunningExercise;
+

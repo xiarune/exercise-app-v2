@@ -1,19 +1,60 @@
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  text-align: center;
   margin: 0;
   padding: 0;
 }
 
-
 .App {
   max-width: 600px;
   margin: auto;
+  padding: 0;
+}
+
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.back-arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+  color: #007bff;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.back-arrow:hover {
+  color: white;
+  background-color: #007bff;
+}
+
+.exercise-title {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  text-align: left;
+}
+
+
+.exercise-container {
+  background: #ffffff;
   padding: 20px;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -21,18 +62,26 @@ h1 {
   font-size: 28px;
   color: #333;
   margin-bottom: 20px;
+  text-align: center;
 }
-
 
 h2 {
   font-size: 22px;
   color: #555;
   margin-bottom: 15px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 18px;
+  color: #444;
+  margin-top: 30px;
+  text-align: center;
 }
 
 
 button {
-  background: #007bff;
+  background-color: #007bff;
   color: white;
   border: none;
   padding: 12px 20px;
@@ -40,15 +89,15 @@ button {
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
-  background: #0056b3;
+  background-color: #0056b3;
 }
 
 button:disabled {
-  background: #ccc;
+  background-color: #ccc;
   cursor: not-allowed;
 }
 
@@ -68,21 +117,19 @@ button:disabled {
 ul {
   list-style-type: none;
   padding: 0;
+  margin: 0 auto;
+  max-width: 300px;
+  text-align: left;
 }
 
 li {
-  background: #f9f9f9;
+  background-color: #f9f9f9;
   padding: 10px;
   margin: 5px 0;
-  border-radius: 5px;
   border-left: 5px solid #007bff;
+  border-radius: 4px;
 }
 
 
-.exercise-container {
-  background: white;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin-top: 20px;
-}
+
+

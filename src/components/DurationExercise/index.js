@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const DurationExercise = ({ name, suggested, goHome, goToExercise }) => {
+const DurationExercise = ({ suggested, goHome, goToExercise }) => {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
 
@@ -21,20 +21,15 @@ const DurationExercise = ({ name, suggested, goHome, goToExercise }) => {
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
-      <h2>{name}</h2>
+    <div>
       <p>Duration: {formatTime(time)}</p>
       <button onClick={() => setIsRunning(!isRunning)}>
         {isRunning ? "Pause" : "Start"}
       </button>
       <button onClick={() => { setIsRunning(false); setTime(0); }}>Reset</button>
-
       <div style={{ marginTop: "20px" }}>
         <button onClick={() => goToExercise(suggested)}>
           Do Suggested: {suggested.name}
-        </button>
-        <button onClick={goHome} style={{ marginLeft: "10px" }}>
-          Home
         </button>
       </div>
     </div>
@@ -42,3 +37,4 @@ const DurationExercise = ({ name, suggested, goHome, goToExercise }) => {
 };
 
 export default DurationExercise;
+

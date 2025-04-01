@@ -27,30 +27,34 @@ function App() {
   return (
     <div className="App">
       {selectedExercise ? (
-        <div className="exercise-container">
-          {selectedExercise.type === "repetition" ? (
-            <RepetitionExercise
-              name={selectedExercise.name}
-              suggested={selectedExercise.suggested}
-              goHome={goHome}
-              goToExercise={goToExercise}
-            />
-          ) : selectedExercise.type === "duration" ? (
-            <DurationExercise
-              name={selectedExercise.name}
-              suggested={selectedExercise.suggested}
-              goHome={goHome}
-              goToExercise={goToExercise}
-            />
-          ) : (
-            <RunningExercise
-              name={selectedExercise.name}
-              suggested={selectedExercise.suggested}
-              goHome={goHome}
-              goToExercise={goToExercise}
-            />
-          )}
-        </div>
+        <>
+          <div className="top-nav">
+            <button onClick={goHome} className="back-arrow">←</button>
+            <h2 className="exercise-title">{selectedExercise.name}</h2>
+          </div>
+
+          <div className="exercise-container">
+            {selectedExercise.type === "repetition" ? (
+              <RepetitionExercise
+                suggested={selectedExercise.suggested}
+                goHome={goHome}
+                goToExercise={goToExercise}
+              />
+            ) : selectedExercise.type === "duration" ? (
+              <DurationExercise
+                suggested={selectedExercise.suggested}
+                goHome={goHome}
+                goToExercise={goToExercise}
+              />
+            ) : (
+              <RunningExercise
+                suggested={selectedExercise.suggested}
+                goHome={goHome}
+                goToExercise={goToExercise}
+              />
+            )}
+          </div>
+        </>
       ) : (
         <div>
           <h1>Exercises</h1>
@@ -69,4 +73,5 @@ function App() {
 }
 
 export default App;
+
 
